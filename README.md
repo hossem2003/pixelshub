@@ -1,4 +1,4 @@
-# 🎮 Pixels - Collaborative Educational Platform
+# Pixels - Collaborative Educational Platform
 
 A modern, pixel-art inspired educational platform featuring a unique version control system for learning resources. Built with vanilla HTML, CSS, and JavaScript.
 
@@ -7,17 +7,17 @@ A modern, pixel-art inspired educational platform featuring a unique version con
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-## ✨ Features
+## Features
 
-- 📚 **Browse & Search** - Explore educational courses and resources across multiple subjects
-- ✏️ **Create Content** - Build new courses, notes, and cheat sheets with a rich text editor
-- 🔄 **Version Control** - Fork and improve existing content with full version history
-- 💬 **Community Discussions** - Engage with learners and contributors
-- 🏆 **Leaderboard & Achievements** - Earn badges and track your contributions
-- 🎨 **Dark/Light Theme** - Toggle between themes for comfortable learning
-- 📱 **Responsive Design** - Works seamlessly across all devices
+- **Browse & Search** - Explore educational courses and resources across multiple subjects
+- **Create Content** - Build new courses, notes, and cheat sheets with a rich text editor
+- **Version Control** - Fork and improve existing content with full version history
+- **Community Discussions** - Engage with learners and contributors
+- **Leaderboard & Achievements** - Earn badges and track your contributions
+- **Dark/Light Theme** - Toggle between themes for comfortable learning
+- **Responsive Design** - Works seamlessly across all devices
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -40,7 +40,7 @@ A modern, pixel-art inspired educational platform featuring a unique version con
 3. **Open your browser:**
    Navigate to `http://localhost:8080`
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 pixels/
@@ -72,7 +72,7 @@ pixels/
     └── *.js               # Page-specific scripts
 ```
 
-## 🎯 Key Pages
+## Key Pages
 
 ### Home (`index.html`)
 Featured courses and subject categories with quick navigation
@@ -95,7 +95,7 @@ Community discussions with threads, replies, and voting
 ### Leaderboard (`leaderboard.html`)
 Top contributors ranked by community score and achievements
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 - **Primary**: Cyan (#00ffff) - Main brand color
@@ -110,7 +110,7 @@ Top contributors ranked by community score and achievements
 ### Icons
 - Font Awesome 6.5.1 for consistent iconography
 
-## 🛠️ Technologies
+## Technologies
 
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, Grid, Flexbox
@@ -118,14 +118,14 @@ Top contributors ranked by community score and achievements
 - **Font Awesome** - Icon library
 - **Google Fonts** - Typography
 
-## 🌐 Browser Support
+## Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## 📝 Features Walkthrough
+## Features Walkthrough
 
 ### 1. Creating Content
 Navigate to the Create page, choose your content type (Course/Notes/Cheat Sheet), and use the rich text editor to build your content.
@@ -139,7 +139,7 @@ Each resource maintains a complete version history. Compare versions side-by-sid
 ### 4. Community Engagement
 Participate in discussions, upvote helpful contributions, and earn achievements.
 
-## 🤝 Contributing
+## Contributing
 
 This is a demo/portfolio project, but contributions are welcome!
 
@@ -149,24 +149,24 @@ This is a demo/portfolio project, but contributions are welcome!
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👤 Author
+## Author
 
 **Hossem Pixel** ([@hossem2003](https://github.com/hossem2003))
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Font Awesome for the icon library
 - Google Fonts for Press Start 2P typeface
 - Inspired by collaborative learning platforms and version control systems
 
-## 📧 Contact
+## Contact
 
 For questions or feedback, feel free to reach out or open an issue!
 
 ---
 
-**⭐ Star this repo if you find it helpful!**
+**Star this repo if you find it helpful!**
