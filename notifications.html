@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/notifications.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="notification-icon active">
+        <span>”</span>
+        <span class="notification-badge">5</span>
+      </div>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container notifications-container">
+    <!-- Notifications Header -->
+    <div class="notifications-header">
+      <h1>” Notifications</h1>
+      <div class="notification-controls">
+        <button class="btn btn-sm btn-outline" onclick="markAllRead()">Mark All as Read</button>
+        <button class="btn btn-sm btn-outline" onclick="openSettings()"><i class="fas fa-cog"></i> Settings</button>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="notification-tabs">
+      <button class="tab active" onclick="filterNotifications('all')">All (5)</button>
+      <button class="tab" onclick="filterNotifications('unread')">Unread (3)</button>
+      <button class="tab" onclick="filterNotifications('mentions')">Mentions (1)</button>
+      <button class="tab" onclick="filterNotifications('contributions')">Contributions (2)</button>
+    </div>
+
+    <!-- Notifications List -->
+    <div class="notifications-list">
+      
+      <!-- New Version Notification -->
+      <div class="notification-item unread" data-type="contributions">
+        <div class="notification-icon-bubble version"></div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>Sarah Chen</strong> created a new version of your resource
+            <span class="notification-time">2 hours ago</span>
+          </div>
+          <p class="notification-text">
+            <a href="course.html" class="notification-link">Data Structures Cheat Sheet</a> 
+            was improved with better examples for binary trees
+          </p>
+          <div class="notification-actions">
+            <button class="btn-text primary">View Changes</button>
+            <button class="btn-text">Dismiss</button>
+          </div>
+        </div>
+        <div class="notification-status"></div>
+      </div>
+
+      <!-- Mention Notification -->
+      <div class="notification-item unread" data-type="mentions">
+        <div class="notification-icon-bubble mention">@</div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>Mike Johnson</strong> mentioned you in a discussion
+            <span class="notification-time">5 hours ago</span>
+          </div>
+          <p class="notification-text">
+            "@hossempixel Do you agree with this approach to explaining recursion?"
+          </p>
+          <div class="notification-actions">
+            <button class="btn-text primary">Reply</button>
+            <button class="btn-text">View Discussion</button>
+          </div>
+        </div>
+        <div class="notification-status"></div>
+      </div>
+
+      <!-- Upvote Notification -->
+      <div class="notification-item unread" data-type="contributions">
+        <div class="notification-icon-bubble upvote"><i class="fas fa-thumbs-up"></i></div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>15 people</strong> upvoted your version
+            <span class="notification-time">1 day ago</span>
+          </div>
+          <p class="notification-text">
+            Your improvement to <a href="course.html" class="notification-link">Python Functions Guide</a> reached 50 upvotes!
+          </p>
+          <div class="notification-actions">
+            <button class="btn-text primary">View Version</button>
+          </div>
+        </div>
+        <div class="notification-status"></div>
+      </div>
+
+      <!-- Badge Earned Notification -->
+      <div class="notification-item read">
+        <div class="notification-icon-bubble badge"><i class="fas fa-trophy"></i></div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>Badge Earned!</strong> You unlocked "Knowledge Sharer"
+            <span class="notification-time">2 days ago</span>
+          </div>
+          <p class="notification-text">
+            Congratulations! You've published 10 resources and earned the Knowledge Sharer badge.
+          </p>
+          <div class="notification-actions">
+            <button class="btn-text primary">View Profile</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comment Notification -->
+      <div class="notification-item read">
+        <div class="notification-icon-bubble comment">¬</div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>Alex Rivera</strong> commented on your version
+            <span class="notification-time">3 days ago</span>
+          </div>
+          <p class="notification-text">
+            "Great explanation of Big O notation! This really helped me understand the concept."
+          </p>
+          <div class="notification-actions">
+            <button class="btn-text primary">Reply</button>
+            <button class="btn-text">View Comments</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Notification -->
+      <div class="notification-item read">
+        <div class="notification-icon-bubble system"></div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>System Update</strong>
+            <span class="notification-time">1 week ago</span>
+          </div>
+          <p class="notification-text">
+            New feature: You can now compare up to 4 versions side-by-side! Check it out on the Versions page.
+          </p>
+          <div class="notification-actions">
+            <button class="btn-text primary">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fork Notification -->
+      <div class="notification-item read">
+        <div class="notification-icon-bubble fork"><i class="fas fa-code-branch"></i></div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>3 people</strong> used your version as a base
+            <span class="notification-time">1 week ago</span>
+          </div>
+          <p class="notification-text">
+            Your <a href="course.html" class="notification-link">JavaScript Promises Explained</a> version was forked and improved
+          </p>
+          <div class="notification-actions">
+            <button class="btn-text primary">View Forks</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weekly Summary -->
+      <div class="notification-item read">
+        <div class="notification-icon-bubble summary"></div>
+        <div class="notification-content">
+          <div class="notification-header">
+            <strong>Your Weekly Summary</strong>
+            <span class="notification-time">2 weeks ago</span>
+          </div>
+          <div class="weekly-stats">
+            <div class="stat-item">
+              <div class="stat-value">156</div>
+              <div class="stat-label">Views</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">23</div>
+              <div class="stat-label">Upvotes</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">+45</div>
+              <div class="stat-label">Community Score</div>
+            </div>
+          </div>
+          <div class="notification-actions">
+            <button class="btn-text primary">View Full Report</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty State (hidden when notifications exist) -->
+    <div class="empty-state" style="display: none;">
+      <div class="empty-icon">”</div>
+      <h3>No New Notifications</h3>
+      <p>You're all caught up! Check back later for updates on your contributions.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="help.html">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="discussions.html">Discussions</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/notifications.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/profile.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html" class="active">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Profile Container -->
+  <div class="profile-container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="container">
+        <div class="profile-info">
+          <div class="profile-avatar-large">HP</div>
+          <div class="profile-details">
+            <h1 class="profile-name">Hossem Pixel</h1>
+            <p class="profile-username">@hossempixel</p>
+            <p class="profile-bio">Pixel artist and developer passionate about retro aesthetics and open-source education. Contributing to make learning accessible for everyone through pixel-perfect design.</p>
+            <div class="profile-interests">
+              <span class="interest-tag">Pixel Art</span>
+              <span class="interest-tag">Retro Design</span>
+              <span class="interest-tag">Open Source</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Stats -->
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-edit"></i></div>
+          <div class="stat-value">23</div>
+          <div class="stat-label">Contributions</div>
+        </div>
+        
+        <div class="stat-card highlight">
+          <div class="stat-icon"><i class="fas fa-star"></i></div>
+          <div class="stat-value">1,247</div>
+          <div class="stat-label">Total Community Score</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+          <div class="stat-value">5</div>
+          <div class="stat-label">Top Versions</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-medal"></i></div>
+          <div class="stat-value">8</div>
+          <div class="stat-label">Badges Earned</div>
+        </div>
+      </div>
+
+      <!-- Badges Section -->
+      <div class="section">
+        <h2 class="section-title"><i class="fas fa-medal"></i> Badges</h2>
+        <div class="badges-grid">
+          <div class="badge-card earned">
+            <div class="badge-icon"><i class="fas fa-crown"></i></div>
+            <h3>Top Contributor</h3>
+            <p>Earned 100+ community score</p>
+          </div>
+          
+          <div class="badge-card earned">
+            <div class="badge-icon"><i class="fas fa-star"></i></div>
+            <h3>Version Master</h3>
+            <p>Created 5 top versions</p>
+          </div>
+          
+          <div class="badge-card earned">
+            <div class="badge-icon"><i class="fas fa-check"></i></div>
+            <h3>Peer Reviewer</h3>
+            <p>Reviewed 20+ contributions</p>
+          </div>
+          
+          <div class="badge-card earned">
+            <div class="badge-icon"><i class="fas fa-book"></i></div>
+            <h3>Knowledge Sharer</h3>
+            <p>Published 10 resources</p>
+          </div>
+          
+          <div class="badge-card">
+            <div class="badge-icon"><i class="fas fa-star"></i></div>
+            <h3>Community Star</h3>
+            <p>Earn 500 community score</p>
+            <div class="badge-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%;"></div>
+              </div>
+              <span class="progress-text">300/500</span>
+            </div>
+          </div>
+          
+          <div class="badge-card">
+            <div class="badge-icon"><i class="fas fa-gem"></i></div>
+            <h3>Elite Educator</h3>
+            <p>Create 10 top versions</p>
+            <div class="badge-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%;"></div>
+              </div>
+              <span class="progress-text">5/10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contributions Section -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title"><i class="fas fa-edit"></i> My Contributions</h2>
+          <div class="contribution-tabs">
+            <button class="tab-btn active">All (23)</button>
+            <button class="tab-btn">Resources (8)</button>
+            <button class="tab-btn">Improvements (15)</button>
+          </div>
+        </div>
+
+        <div class="contributions-list">
+          <div class="contribution-item">
+            <div class="contribution-type created">Created</div>
+            <div class="contribution-content">
+              <h3><a href="course.html">Advanced Data Structures & Algorithms</a></h3>
+              <p>Comprehensive guide covering trees, graphs, dynamic programming, and more</p>
+              <div class="contribution-meta">
+                <span><i class="fas fa-star"></i> 342</span>
+                <span><i class="fas fa-code-branch"></i> 12 versions</span>
+                <span><i class="far fa-calendar"></i> 3 months ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contribution-item">
+            <div class="contribution-type improved">Improved</div>
+            <div class="contribution-content">
+              <h3><a href="#">Quantum Mechanics Essentials</a></h3>
+              <p>Added examples and clarified wave function concepts</p>
+              <div class="contribution-meta">
+                <span><i class="fas fa-star"></i> +24 score</span>
+                <span>v3.1 → v3.2</span>
+                <span><i class="far fa-calendar"></i> 1 week ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contribution-item">
+            <div class="contribution-type created">Created</div>
+            <div class="contribution-content">
+              <h3><a href="#">Python Data Visualization Guide</a></h3>
+              <p>Complete guide to matplotlib, seaborn, and plotly</p>
+              <div class="contribution-meta">
+                <span><i class="fas fa-star"></i> 187</span>
+                <span><i class="fas fa-code-branch"></i> 6 versions</span>
+                <span><i class="far fa-calendar"></i> 2 months ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contribution-item">
+            <div class="contribution-type improved">Improved</div>
+            <div class="contribution-content">
+              <h3><a href="#">Linear Algebra Cheat Sheet</a></h3>
+              <p>Fixed notation errors and added practice problems</p>
+              <div class="contribution-meta">
+                <span><i class="fas fa-star"></i> +18 score</span>
+                <span>v4.0 → v4.1</span>
+                <span><i class="far fa-calendar"></i> 2 weeks ago</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contribution-item">
+            <div class="contribution-type created">Created</div>
+            <div class="contribution-content">
+              <h3><a href="#">React Hooks Deep Dive</a></h3>
+              <p>Understanding useState, useEffect, and custom hooks</p>
+              <div class="contribution-meta">
+                <span><i class="fas fa-star"></i> 156</span>
+                <span><i class="fas fa-code-branch"></i> 4 versions</span>
+                <span><i class="far fa-calendar"></i> 1 month ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--spacing-lg);">
+          <button class="btn btn-outline">Load More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

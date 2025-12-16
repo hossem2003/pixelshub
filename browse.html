@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Courses - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/browse.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html" class="active">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Browse Layout -->
+  <div class="browse-layout">
+    <!-- Left Sidebar - Filters -->
+    <aside class="filters-sidebar">
+      <div class="filter-section">
+        <h3 class="filter-title">Subject</h3>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="all" checked>
+            <span>All Subjects</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="cs">
+            <span>Computer Science</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="math">
+            <span>Mathematics</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="physics">
+            <span>Physics</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="design">
+            <span>Design</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="languages">
+            <span>Languages</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="chemistry">
+            <span>Chemistry</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="subject" value="biology">
+            <span>Biology</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h3 class="filter-title">Level</h3>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" name="level" value="beginner">
+            <span>Beginner</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="level" value="intermediate">
+            <span>Intermediate</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="level" value="advanced">
+            <span>Advanced</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h3 class="filter-title">Content Type</h3>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="course">
+            <span>Course</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="notes">
+            <span>Notes</span>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="cheatsheet">
+            <span>Cheat Sheet</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h3 class="filter-title">Sort By</h3>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="radio" name="sort" value="interactions" checked>
+            <span>Most Interactions</span>
+          </label>
+          <label class="filter-option">
+            <input type="radio" name="sort" value="improved">
+            <span>Most Improved</span>
+          </label>
+          <label class="filter-option">
+            <input type="radio" name="sort" value="latest">
+            <span>Latest</span>
+          </label>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Apply Filters</button>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="browse-content">
+      <div class="browse-header">
+        <h1>Browse Resources</h1>
+        <div class="browse-meta">
+          <span>Showing 247 resources</span>
+        </div>
+      </div>
+
+      <!-- Course Cards -->
+      <div class="course-list">
+        <div class="card" onclick="window.location.href='course.html'">
+          <span class="card-badge">Top Version</span>
+          <h3 class="card-title">Advanced Data Structures & Algorithms</h3>
+          <span class="card-tag">Computer Science</span>
+          <span class="level-badge intermediate">Intermediate</span>
+          <p class="card-description">Comprehensive guide covering trees, graphs, dynamic programming, and more with practical examples.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 342</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 12 versions</span>
+            <span class="card-stat"><i class="fas fa-book"></i> Course</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar">+5</div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='course.html'">
+          <span class="card-badge">Top Version</span>
+          <h3 class="card-title">Quantum Mechanics Essentials</h3>
+          <span class="card-tag">Physics</span>
+          <span class="level-badge advanced">Advanced</span>
+          <p class="card-description">Master the fundamentals of quantum mechanics with clear explanations and worked examples.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 298</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 9 versions</span>
+            <span class="card-stat"><i class="fas fa-book"></i> Course</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='course.html'">
+          <span class="card-badge">Top Version</span>
+          <h3 class="card-title">Linear Algebra Cheat Sheet</h3>
+          <span class="card-tag">Mathematics</span>
+          <span class="level-badge beginner">Beginner</span>
+          <p class="card-description">Quick reference for matrix operations, eigenvalues, vector spaces, and transformations.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 276</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 15 versions</span>
+            <span class="card-stat"><i class="fas fa-file-alt"></i> Cheat Sheet</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">UI/UX Design Principles</h3>
+          <span class="card-tag">Design</span>
+          <span class="level-badge intermediate">Intermediate</span>
+          <p class="card-description">Learn the core principles of user interface and user experience design.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 254</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 7 versions</span>
+            <span class="card-stat"><i class="fas fa-book"></i> Course</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Python for Data Science</h3>
+          <span class="card-tag">Computer Science</span>
+          <span class="level-badge beginner">Beginner</span>
+          <p class="card-description">Introduction to Python programming with focus on data analysis and visualization.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 189</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 6 versions</span>
+            <span class="card-stat"><i class="fas fa-book"></i> Course</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Spanish Grammar Guide</h3>
+          <span class="card-tag">Languages</span>
+          <span class="level-badge intermediate">Intermediate</span>
+          <p class="card-description">Complete guide to Spanish grammar with examples and exercises.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 167</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 5 versions</span>
+            <span class="card-stat"><i class="fas fa-file-alt"></i> Notes</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Organic Chemistry Reactions</h3>
+          <span class="card-tag">Chemistry</span>
+          <span class="level-badge advanced">Advanced</span>
+          <p class="card-description">Comprehensive collection of organic chemistry reactions with mechanisms.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 143</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 4 versions</span>
+            <span class="card-stat"><i class="fas fa-file-alt"></i> Cheat Sheet</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Machine Learning Basics</h3>
+          <span class="card-tag">Computer Science</span>
+          <span class="level-badge intermediate">Intermediate</span>
+          <p class="card-description">Fundamentals of machine learning algorithms and applications.</p>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 221</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 11 versions</span>
+            <span class="card-stat"><i class="fas fa-book"></i> Course</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="btn btn-outline" disabled>← Previous</button>
+        <div class="page-numbers">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn">4</button>
+          <span>...</span>
+          <button class="page-btn">12</button>
+        </div>
+        <button class="btn btn-outline">Next →</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

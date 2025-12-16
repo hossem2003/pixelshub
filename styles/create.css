@@ -1,0 +1,218 @@
+/* Create Page Styles */
+
+.create-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 2px solid var(--surface);
+}
+
+.create-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.create-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Form Styles */
+.create-form {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-xl);
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--background);
+  border-radius: var(--radius-md);
+  background: var(--background);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all var(--transition-normal);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+.form-textarea {
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.form-textarea.editor {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+}
+
+.form-hint {
+  display: block;
+  margin-top: var(--spacing-xs);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.radio-option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border: 2px solid var(--background);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.radio-option:hover {
+  border-color: var(--primary);
+  background: var(--background);
+}
+
+.radio-option input[type="radio"] {
+  margin-top: 4px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-label {
+  color: var(--primary);
+}
+
+.radio-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.radio-label strong {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.radio-label small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Editor Toolbar */
+.editor-toolbar {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: var(--background);
+  border: 2px solid var(--background);
+  border-bottom: none;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.toolbar-btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--surface);
+  border: 1px solid var(--background);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.toolbar-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.editor-toolbar + .form-textarea {
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+/* Guidelines Box */
+.guidelines-box {
+  background: linear-gradient(135deg, rgba(200, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.guidelines-box h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.guidelines-box ul {
+  list-style-position: inside;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.guidelines-box li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  padding-top: var(--spacing-lg);
+  border-top: 2px solid var(--background);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .create-header h1 {
+    font-size: 2rem;
+  }
+  
+  .create-form {
+    padding: var(--spacing-lg);
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+  }
+  
+  .editor-toolbar {
+    flex-wrap: wrap;
+  }
+}

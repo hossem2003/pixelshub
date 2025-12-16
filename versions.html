@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Version History - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/versions.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Version History -->
+  <div class="container" style="padding-top: 2rem;">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> / <a href="browse.html">Browse</a> / <a href="course.html">Advanced Data Structures</a> / <span>Versions</span>
+    </div>
+    
+    <div class="page-header">
+      <h1>Version History</h1>
+      <div class="sort-options">
+        <label>Sort by:</label>
+        <select class="sort-select">
+          <option value="score">Highest Score</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Version Timeline -->
+    <div class="version-timeline">
+      <!-- Version 4.2 (Current) -->
+      <div class="version-card current">
+        <div class="version-badge">Current Version</div>
+        <div class="version-header">
+          <div class="version-number monospace">v4.2</div>
+          <div class="version-score"><i class="fas fa-star"></i> 342</div>
+        </div>
+        <div class="version-meta">
+          <span class="version-date"><i class="far fa-calendar"></i> Updated 3 days ago</span>
+          <span class="version-author"><i class="fas fa-user"></i> Sarah Chen</span>
+        </div>
+        <div class="version-summary">
+          <h3>What Changed:</h3>
+          <ul>
+            <li>Added comprehensive examples for tree traversal algorithms</li>
+            <li>Improved code samples with better comments</li>
+            <li>Fixed typos in heap section</li>
+            <li>Added real-world applications for each data structure</li>
+          </ul>
+        </div>
+        <div class="version-actions">
+          <button class="btn btn-primary" onclick="window.location.href='course.html'">View</button>
+          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=4.2&v2=4.1'">Compare</button>
+        </div>
+      </div>
+
+      <!-- Version 4.1 -->
+      <div class="version-card">
+        <div class="version-header">
+          <div class="version-number monospace">v4.1</div>
+          <div class="version-score"><i class="fas fa-star"></i> 318</div>
+        </div>
+        <div class="version-meta">
+          <span class="version-date"><i class="far fa-calendar"></i> 1 week ago</span>
+          <span class="version-author"><i class="fas fa-user"></i> Alex Kumar</span>
+        </div>
+        <div class="version-summary">
+          <h3>What Changed:</h3>
+          <ul>
+            <li>Enhanced graph algorithms section</li>
+            <li>Added visualization links</li>
+            <li>Restructured prerequisites section</li>
+          </ul>
+        </div>
+        <div class="version-actions">
+          <button class="btn btn-primary" onclick="alert('View version 4.1')">View</button>
+          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=4.1&v2=4.0'">Compare</button>
+        </div>
+      </div>
+
+      <!-- Version 4.0 -->
+      <div class="version-card">
+        <div class="version-header">
+          <div class="version-number monospace">v4.0</div>
+          <div class="version-score"><i class="fas fa-star"></i> 295</div>
+        </div>
+        <div class="version-meta">
+          <span class="version-date"><i class="far fa-calendar"></i> 2 weeks ago</span>
+          <span class="version-author"><i class="fas fa-user"></i> Maria Garcia</span>
+        </div>
+        <div class="version-summary">
+          <h3>What Changed:</h3>
+          <ul>
+            <li>Major restructuring of course flow</li>
+            <li>Added practice problems for each chapter</li>
+            <li>Improved code formatting</li>
+          </ul>
+        </div>
+        <div class="version-actions">
+          <button class="btn btn-primary" onclick="alert('View version 4.0')">View</button>
+          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=4.0&v2=3.8'">Compare</button>
+        </div>
+      </div>
+
+      <!-- Version 3.8 -->
+      <div class="version-card">
+        <div class="version-header">
+          <div class="version-number monospace">v3.8</div>
+          <div class="version-score"><i class="fas fa-star"></i> 267</div>
+        </div>
+        <div class="version-meta">
+          <span class="version-date"><i class="far fa-calendar"></i> 3 weeks ago</span>
+          <span class="version-author"><i class="fas fa-user"></i> John Smith</span>
+        </div>
+        <div class="version-summary">
+          <h3>What Changed:</h3>
+          <ul>
+            <li>Added complexity analysis for all algorithms</li>
+            <li>Fixed errors in linked list implementation</li>
+          </ul>
+        </div>
+        <div class="version-actions">
+          <button class="btn btn-primary" onclick="alert('View version 3.8')">View</button>
+          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=3.8&v2=3.7'">Compare</button>
+        </div>
+      </div>
+
+      <!-- Version 3.7 -->
+      <div class="version-card">
+        <div class="version-header">
+          <div class="version-number monospace">v3.7</div>
+          <div class="version-score"><i class="fas fa-star"></i> 241</div>
+        </div>
+        <div class="version-meta">
+          <span class="version-date"><i class="far fa-calendar"></i> 1 month ago</span>
+          <span class="version-author"><i class="fas fa-user"></i> Lisa Wong</span>
+        </div>
+        <div class="version-summary">
+          <h3>What Changed:</h3>
+          <ul>
+            <li>Expanded heap operations section</li>
+            <li>Added memory management tips</li>
+          </ul>
+        </div>
+        <div class="version-actions">
+          <button class="btn btn-primary" onclick="alert('View version 3.7')">View</button>
+          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=3.7&v2=3.6'">Compare</button>
+        </div>
+      </div>
+
+      <!-- Earlier Versions -->
+      <div class="version-card collapsed">
+        <div class="version-header">
+          <span class="monospace">7 earlier versions</span>
+        </div>
+        <button class="btn btn-outline" style="width: 100%;" onclick="this.parentElement.classList.toggle('collapsed')">
+          Show Earlier Versions
+        </button>
+      </div>
+    </div>
+
+    <div class="back-link" style="margin-top: 2rem; text-align: center;">
+      <a href="course.html" class="btn btn-outline">← Back to Course</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container settings-container">
+    <!-- Settings Header -->
+    <div class="settings-header">
+      <h1><i class="fas fa-cog"></i> Settings</h1>
+      <p>Customize your Pixels experience</p>
+    </div>
+
+    <div class="settings-layout">
+      <!-- Settings Sidebar -->
+      <aside class="settings-sidebar">
+        <nav class="settings-nav">
+          <a href="#profile" class="settings-nav-item active" onclick="showSection('profile')">
+            <span class="nav-icon"><i class="fas fa-user"></i></span>
+            Profile
+          </a>
+          <a href="#account" class="settings-nav-item" onclick="showSection('account')">
+            <span class="nav-icon"></span>
+            Account
+          </a>
+          <a href="#notifications" class="settings-nav-item" onclick="showSection('notifications')">
+            <span class="nav-icon">”</span>
+            Notifications
+          </a>
+          <a href="#appearance" class="settings-nav-item" onclick="showSection('appearance')">
+            <span class="nav-icon"><i class="fas fa-palette"></i></span>
+            Appearance
+          </a>
+          <a href="#privacy" class="settings-nav-item" onclick="showSection('privacy')">
+            <span class="nav-icon">’</span>
+            Privacy
+          </a>
+          <a href="#editor" class="settings-nav-item" onclick="showSection('editor')">
+            <span class="nav-icon"><i class="fas fa-file-alt"></i></span>
+            Editor
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Settings Content -->
+      <main class="settings-content">
+        
+        <!-- Profile Settings -->
+        <section class="settings-section active" id="profile-section">
+          <h2><i class="fas fa-user"></i> Profile Settings</h2>
+          
+          <div class="setting-group">
+            <label class="setting-label">Profile Picture</label>
+            <div class="profile-picture-upload">
+              <div class="current-avatar">HP</div>
+              <div>
+                <button class="btn btn-outline btn-sm">Upload New Picture</button>
+                <p class="setting-hint">PNG, JPG up to 5MB. Square images work best.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label" for="display-name">Display Name</label>
+            <input type="text" id="display-name" class="setting-input" value="Hossem Pixel" placeholder="Your display name">
+            <p class="setting-hint">This is how others see you on Pixels</p>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label" for="username">Username</label>
+            <input type="text" id="username" class="setting-input" value="hossempixel" placeholder="Your username">
+            <p class="setting-hint">Unique identifier for your profile</p>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label" for="bio">Bio</label>
+            <textarea id="bio" class="setting-textarea" rows="4" placeholder="Tell us about yourself...">Pixel artist and developer passionate about open-source education and retro aesthetics.</textarea>
+            <p class="setting-hint">Brief description for your profile (max 200 characters)</p>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label" for="website">Website</label>
+            <input type="url" id="website" class="setting-input" value="https://hossempixel.dev" placeholder="https://yourwebsite.com">
+          </div>
+
+          <button class="btn btn-primary">Save Profile Changes</button>
+        </section>
+
+        <!-- Account Settings -->
+        <section class="settings-section" id="account-section">
+          <h2> Account Settings</h2>
+          
+          <div class="setting-group">
+            <label class="setting-label" for="email">Email Address</label>
+            <input type="email" id="email" class="setting-input" value="hossem@pixels.dev" placeholder="your@email.com">
+            <p class="setting-hint">Used for notifications and account recovery</p>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label">Password</label>
+            <button class="btn btn-outline">Change Password</button>
+            <p class="setting-hint">Last changed 3 months ago</p>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label">Two-Factor Authentication</label>
+            <div class="setting-toggle-group">
+              <span>Add an extra layer of security to your account</span>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-group danger-zone">
+            <h3>Danger Zone</h3>
+            <div class="danger-actions">
+              <div>
+                <strong>Export Your Data</strong>
+                <p class="setting-hint">Download all your contributions and activity</p>
+                <button class="btn btn-outline btn-sm">Request Export</button>
+              </div>
+              <div>
+                <strong>Delete Account</strong>
+                <p class="setting-hint">Permanently delete your account and all data</p>
+                <button class="btn btn-outline btn-sm danger">Delete Account</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Notifications Settings -->
+        <section class="settings-section" id="notifications-section">
+          <h2>” Notification Preferences</h2>
+          
+          <div class="setting-group">
+            <h3>Email Notifications</h3>
+            
+            <div class="setting-checkbox-group">
+              <label class="setting-checkbox">
+                <input type="checkbox" checked>
+                <span>New versions of my resources</span>
+              </label>
+              
+              <label class="setting-checkbox">
+                <input type="checkbox" checked>
+                <span>Mentions in discussions</span>
+              </label>
+              
+              <label class="setting-checkbox">
+                <input type="checkbox">
+                <span>Upvotes on my contributions</span>
+              </label>
+              
+              <label class="setting-checkbox">
+                <input type="checkbox" checked>
+                <span>Comments on my versions</span>
+              </label>
+              
+              <label class="setting-checkbox">
+                <input type="checkbox">
+                <span>Weekly activity summary</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <h3>Push Notifications</h3>
+            
+            <div class="setting-toggle-group">
+              <span>Enable browser push notifications</span>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <h3>Notification Frequency</h3>
+            <select class="setting-input">
+              <option value="instant">Instant (as they happen)</option>
+              <option value="hourly">Hourly digest</option>
+              <option value="daily" selected>Daily digest</option>
+              <option value="weekly">Weekly digest</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary">Save Notification Settings</button>
+        </section>
+
+        <!-- Appearance Settings -->
+        <section class="settings-section" id="appearance-section">
+          <h2><i class="fas fa-palette"></i> Appearance</h2>
+          
+          <div class="setting-group">
+            <label class="setting-label">Theme</label>
+            <div class="theme-options">
+              <label class="theme-option">
+                <input type="radio" name="theme" value="light" checked>
+                <div class="theme-preview light">
+                  <div class="theme-preview-header"></div>
+                  <div class="theme-preview-body"></div>
+                </div>
+                <span>Light</span>
+              </label>
+              
+              <label class="theme-option">
+                <input type="radio" name="theme" value="dark">
+                <div class="theme-preview dark">
+                  <div class="theme-preview-header"></div>
+                  <div class="theme-preview-body"></div>
+                </div>
+                <span>Dark</span>
+              </label>
+              
+              <label class="theme-option">
+                <input type="radio" name="theme" value="auto">
+                <div class="theme-preview auto">
+                  <div class="theme-preview-header"></div>
+                  <div class="theme-preview-body"></div>
+                </div>
+                <span>Auto</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label">Pixel Style Intensity</label>
+            <input type="range" class="setting-range" min="0" max="100" value="80">
+            <div class="range-labels">
+              <span>Subtle</span>
+              <span>Maximum Retro</span>
+            </div>
+            <p class="setting-hint">Adjust the pixelated aesthetic intensity</p>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label">Font Size</label>
+            <div class="font-size-options">
+              <button class="font-size-btn" data-size="small">A</button>
+              <button class="font-size-btn active" data-size="medium">A</button>
+              <button class="font-size-btn" data-size="large">A</button>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-toggle-group">
+              <span>Reduce animations</span>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p class="setting-hint">Minimize motion for accessibility</p>
+          </div>
+
+          <button class="btn btn-primary">Save Appearance Settings</button>
+        </section>
+
+        <!-- Privacy Settings -->
+        <section class="settings-section" id="privacy-section">
+          <h2>’ Privacy & Data</h2>
+          
+          <div class="setting-group">
+            <h3>Profile Visibility</h3>
+            
+            <div class="setting-toggle-group">
+              <span>Make my profile public</span>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p class="setting-hint">Others can view your profile and contributions</p>
+          </div>
+
+          <div class="setting-group">
+            <h3>Activity Visibility</h3>
+            
+            <div class="setting-checkbox-group">
+              <label class="setting-checkbox">
+                <input type="checkbox" checked>
+                <span>Show my contributions on my profile</span>
+              </label>
+              
+              <label class="setting-checkbox">
+                <input type="checkbox" checked>
+                <span>Show my badges and achievements</span>
+              </label>
+              
+              <label class="setting-checkbox">
+                <input type="checkbox">
+                <span>Show my community score ranking</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <h3>Data Collection</h3>
+            
+            <div class="setting-toggle-group">
+              <span>Analytics and usage data</span>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p class="setting-hint">Help us improve Pixels by sharing anonymous usage data</p>
+          </div>
+
+          <button class="btn btn-primary">Save Privacy Settings</button>
+        </section>
+
+        <!-- Editor Settings -->
+        <section class="settings-section" id="editor-section">
+          <h2><i class="fas fa-file-alt"></i> Editor Preferences</h2>
+          
+          <div class="setting-group">
+            <h3>Editor Theme</h3>
+            <select class="setting-input">
+              <option value="default" selected>Default</option>
+              <option value="monokai">Monokai</option>
+              <option value="solarized-light">Solarized Light</option>
+              <option value="solarized-dark">Solarized Dark</option>
+              <option value="dracula">Dracula</option>
+            </select>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-toggle-group">
+              <span>Line numbers</span>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-toggle-group">
+              <span>Word wrap</span>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-group">
+            <label class="setting-label">Tab Size</label>
+            <select class="setting-input">
+              <option value="2">2 spaces</option>
+              <option value="4" selected>4 spaces</option>
+              <option value="8">8 spaces</option>
+            </select>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-toggle-group">
+              <span>Auto-save drafts</span>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p class="setting-hint">Automatically save your work every 30 seconds</p>
+          </div>
+
+          <div class="setting-group">
+            <div class="setting-toggle-group">
+              <span>Live preview</span>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p class="setting-hint">Show real-time preview while editing</p>
+          </div>
+
+          <button class="btn btn-primary">Save Editor Settings</button>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="help.html">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="discussions.html">Discussions</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/settings.js"></script>
+</body>
+</html>

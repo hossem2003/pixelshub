@@ -1,0 +1,196 @@
+/* Workflow Page Styles */
+
+.workflow-header {
+  text-align: center;
+  padding: var(--spacing-2xl) 0;
+}
+
+.workflow-steps {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) 0;
+}
+
+.workflow-step {
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.workflow-step::after {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 80px;
+  bottom: -30px;
+  width: 4px;
+  background: var(--background);
+  z-index: 0;
+}
+
+.workflow-step:last-child::after {
+  display: none;
+}
+
+.step-number {
+  width: 70px;
+  height: 70px;
+  background: var(--primary);
+  border: 4px solid var(--primary);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-family: var(--font-pixel);
+  color: white;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+
+.step-content {
+  flex: 1;
+  background: var(--surface);
+  border: 3px solid var(--surface);
+  border-radius: 0;
+  padding: var(--spacing-xl);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.step-content:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+  border-color: var(--primary);
+}
+
+.step-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.step-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  font-size: 1rem;
+}
+
+.step-content .btn {
+  margin-top: var(--spacing-sm);
+}
+
+/* Quick Links */
+.quick-links-section {
+  padding: var(--spacing-2xl) 0;
+  text-align: center;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: var(--spacing-xl) auto 0;
+}
+
+.quick-link-card {
+  background: var(--surface);
+  border: 3px solid var(--primary);
+  border-radius: 0;
+  padding: var(--spacing-xl);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.quick-link-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+  border-color: var(--secondary);
+}
+
+.link-icon {
+  font-size: 2.5rem;
+}
+
+.link-text {
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .workflow-step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .workflow-step::after {
+    left: 35px;
+    top: 70px;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+  }
+
+  .step-content {
+    padding: var(--spacing-lg);
+  }
+
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .workflow-header .page-title {
+    font-size: 2rem;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .step-icon {
+    font-size: 2rem;
+  }
+
+  .step-title {
+    font-size: 1rem;
+  }
+
+  .step-description {
+    font-size: 0.9rem;
+  }
+}

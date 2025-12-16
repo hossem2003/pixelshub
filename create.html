@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Resource - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/create.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html" class="active">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Create Form -->
+  <div class="container" style="padding-top: 2rem; max-width: 900px;">
+    <div class="create-header">
+      <h1>Create New Resource</h1>
+      <p>Share your knowledge with the community. Your resource will be version 1.0 and can be improved by others.</p>
+    </div>
+
+    <form class="create-form" onsubmit="handleSubmit(event)">
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title" class="form-label">Title *</label>
+        <input 
+          type="text" 
+          id="title" 
+          class="form-input" 
+          placeholder="e.g., Introduction to Machine Learning"
+          required
+        >
+        <span class="form-hint">Choose a clear, descriptive title</span>
+      </div>
+
+      <!-- Subject -->
+      <div class="form-group">
+        <label for="subject" class="form-label">Subject *</label>
+        <select id="subject" class="form-select" required>
+          <option value="">Select a subject</option>
+          <option value="cs">Computer Science</option>
+          <option value="math">Mathematics</option>
+          <option value="physics">Physics</option>
+          <option value="chemistry">Chemistry</option>
+          <option value="biology">Biology</option>
+          <option value="design">Design</option>
+          <option value="languages">Languages</option>
+          <option value="engineering">Engineering</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Level -->
+      <div class="form-group">
+        <label for="level" class="form-label">Level *</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="level" value="beginner" required>
+            <span class="radio-label">
+              <strong>Beginner</strong>
+              <small>No prior knowledge required</small>
+            </span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="level" value="intermediate">
+            <span class="radio-label">
+              <strong>Intermediate</strong>
+              <small>Some experience needed</small>
+            </span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="level" value="advanced">
+            <span class="radio-label">
+              <strong>Advanced</strong>
+              <small>Significant background required</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Content Type -->
+      <div class="form-group">
+        <label for="type" class="form-label">Content Type *</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="type" value="course" required>
+            <span class="radio-label">
+              <strong><i class="fas fa-book"></i> Course</strong>
+              <small>Comprehensive learning material</small>
+            </span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="type" value="notes">
+            <span class="radio-label">
+              <strong><i class="fas fa-sticky-note"></i> Notes</strong>
+              <small>Study notes and summaries</small>
+            </span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="type" value="cheatsheet">
+            <span class="radio-label">
+              <strong><i class="fas fa-file-alt"></i> Cheat Sheet</strong>
+              <small>Quick reference guide</small>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description" class="form-label">Description *</label>
+        <textarea 
+          id="description" 
+          class="form-textarea" 
+          rows="4"
+          placeholder="Briefly describe what your resource covers and who it's for..."
+          required
+        ></textarea>
+        <span class="form-hint">2-3 sentences recommended</span>
+      </div>
+
+      <!-- Content Editor -->
+      <div class="form-group">
+        <label for="content" class="form-label">Content *</label>
+        <div class="editor-toolbar">
+          <button type="button" class="toolbar-btn" title="Bold">
+            <strong>B</strong>
+          </button>
+          <button type="button" class="toolbar-btn" title="Italic">
+            <em>I</em>
+          </button>
+          <button type="button" class="toolbar-btn" title="Heading">
+            H
+          </button>
+          <button type="button" class="toolbar-btn" title="Code">
+            &lt;/&gt;
+          </button>
+          <button type="button" class="toolbar-btn" title="List">
+            ≡
+          </button>
+          <button type="button" class="toolbar-btn" title="Link">
+            <i class="fas fa-link"></i>
+          </button>
+        </div>
+        <textarea 
+          id="content" 
+          class="form-textarea editor" 
+          rows="20"
+          placeholder="Start writing your content here... You can use Markdown formatting.
+
+# Chapter 1: Introduction
+
+## 1.1 Overview
+
+Your content here...
+
+## 1.2 Key Concepts
+
+- Concept 1
+- Concept 2
+
+```python
+# Code examples
+def example():
+    pass
+```
+"
+          required
+        ></textarea>
+        <span class="form-hint">Supports Markdown formatting</span>
+      </div>
+
+      <!-- Tags (Optional) -->
+      <div class="form-group">
+        <label for="tags" class="form-label">Tags (Optional)</label>
+        <input 
+          type="text" 
+          id="tags" 
+          class="form-input" 
+          placeholder="e.g., python, algorithms, data-science"
+        >
+        <span class="form-hint">Comma-separated tags to help others find your resource</span>
+      </div>
+
+      <!-- Guidelines Box -->
+      <div class="guidelines-box">
+        <h3><i class="fas fa-clipboard-list"></i> Publishing Guidelines</h3>
+        <ul>
+          <li>Ensure your content is original or properly attributed</li>
+          <li>Use clear, understandable language</li>
+          <li>Include examples where appropriate</li>
+          <li>Be respectful and inclusive</li>
+          <li>Your resource will be open for community improvements</li>
+        </ul>
+      </div>
+
+      <!-- Actions -->
+      <div class="form-actions">
+        <button type="button" class="btn btn-outline" onclick="window.history.back()">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-accent" onclick="saveDraft()">
+          <i class="fas fa-save"></i> Save Draft
+        </button>
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> Publish Resource
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Publishing resource... In a real app, this would create version 1.0!');
+      // window.location.href = 'course.html';
+    }
+
+    function saveDraft() {
+      alert('Draft saved! You can continue editing later.');
+    }
+
+    // Simple toolbar functions
+    document.querySelectorAll('.toolbar-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('Editor formatting feature - would format selected text');
+      });
+    });
+  </script>
+</body>
+</html>

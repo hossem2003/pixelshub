@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/about.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Content -->
+  <div class="about-hero">
+    <div class="container">
+      <h1 class="glitch" data-text="PIXELS">PIXELS</h1>
+      <p class="hero-tagline">Where Knowledge Evolves Through Collaboration</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="mission-section">
+        <h2 class="section-title">OUR MISSION</h2>
+        <p class="mission-text">
+          Pixels is revolutionizing education by applying open-source principles to learning materials. 
+          Just like software gets better through community contributions, educational content should too. 
+          We believe the best resources emerge when anyone can improve, fork, and build upon existing work.
+        </p>
+        
+        <div class="version-flow">
+          <div class="flow-item">
+            <div class="flow-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="flow-label">CREATE</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-item">
+            <div class="flow-icon"><i class="fas fa-code-branch"></i></div>
+            <div class="flow-label">IMPROVE</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-item">
+            <div class="flow-icon"><i class="fas fa-star"></i></div>
+            <div class="flow-label">RANK</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <div class="how-section">
+        <h2 class="section-title">HOW IT WORKS</h2>
+        
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>CREATE ORIGINAL CONTENT</h3>
+            <p>Share your knowledge by creating educational resources on any subject.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>COMMUNITY REVIEW</h3>
+            <p>Other learners read, use, and provide feedback on your content.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>FORK & IMPROVE</h3>
+            <p>Anyone can create improved versions with better explanations or examples.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3>VERSION CONTROL</h3>
+            <p>All changes are tracked with full history and contributor attribution.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">05</div>
+            <h3>COMMUNITY VOTING</h3>
+            <p>The best versions rise to the top through community ratings.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">06</div>
+            <h3>CREDIT & RECOGNITION</h3>
+            <p>All contributors earn points and climb the leaderboard.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Values -->
+      <div class="values-section">
+        <h2 class="section-title">CORE VALUES</h2>
+        
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-lock-open"></i></div>
+            <h3>OPEN SOURCE</h3>
+            <p>All content is freely accessible and improvable by anyone.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+            <h3>COLLABORATIVE</h3>
+            <p>Better together - community wisdom beats individual effort.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-trophy"></i></div>
+            <h3>MERITOCRATIC</h3>
+            <p>Quality content rises naturally through community validation.</p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>TRANSPARENT</h3>
+            <p>Full change history with clear attribution for all contributors.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-section">
+        <h2 class="section-title">BY THE NUMBERS</h2>
+        
+        <div class="stats-showcase">
+          <div class="stat-box">
+            <div class="stat-value">10,000+</div>
+            <div class="stat-desc">RESOURCES</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-value">50,000+</div>
+            <div class="stat-desc">CONTRIBUTORS</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-value">150,000+</div>
+            <div class="stat-desc">IMPROVEMENTS</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-value">500+</div>
+            <div class="stat-desc">SUBJECTS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="tech-section">
+        <h2 class="section-title">BUILT WITH</h2>
+        
+        <div class="tech-tags">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Git</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Redis</span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <h2 class="section-title">JOIN THE MOVEMENT</h2>
+        <p class="cta-text">Help us build the future of open education</p>
+        
+        <div class="cta-buttons">
+          <a href="browse.html" class="btn btn-primary">START LEARNING</a>
+          <a href="create.html" class="btn btn-accent">CREATE CONTENT</a>
+          <a href="#" class="btn btn-outline">VIEW ON GITHUB</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

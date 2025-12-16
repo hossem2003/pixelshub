@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/leaderboard.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Leaderboard Container -->
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title"><i class="fas fa-trophy"></i> LEADERBOARD</h1>
+      <p class="page-description">Top contributors ranked by points and achievements</p>
+    </div>
+
+    <!-- Time Filters -->
+    <div class="time-filters">
+      <button class="filter-btn active">ALL TIME</button>
+      <button class="filter-btn">THIS MONTH</button>
+      <button class="filter-btn">THIS WEEK</button>
+    </div>
+
+    <!-- Top 3 Podium -->
+    <div class="podium">
+      <!-- 2nd Place -->
+      <div class="podium-rank rank-2">
+        <div class="podium-badge"><i class="fas fa-medal" style="color: silver;"></i> 2ND</div>
+        <div class="podium-avatar">SK</div>
+        <div class="podium-name">Sarah Kim</div>
+        <div class="podium-stats">
+          <span class="stat"><i class="fas fa-star"></i> 892 pts</span>
+          <span class="stat"><i class="fas fa-book"></i> 18 resources</span>
+          <span class="stat"><i class="fas fa-code-branch"></i> 45 improvements</span>
+        </div>
+      </div>
+
+      <!-- 1st Place -->
+      <div class="podium-rank rank-1">
+        <div class="podium-crown"><i class="fas fa-crown"></i></div>
+        <div class="podium-badge"><i class="fas fa-medal" style="color: gold;"></i> 1ST</div>
+        <div class="podium-avatar first">JD</div>
+        <div class="podium-name">John Davis</div>
+        <div class="podium-stats">
+          <span class="stat"><i class="fas fa-star"></i> 1,247 pts</span>
+          <span class="stat"><i class="fas fa-book"></i> 23 resources</span>
+          <span class="stat"><i class="fas fa-code-branch"></i> 67 improvements</span>
+        </div>
+      </div>
+
+      <!-- 3rd Place -->
+      <div class="podium-rank rank-3">
+        <div class="podium-badge"><i class="fas fa-medal" style="color: #cd7f32;"></i> 3RD</div>
+        <div class="podium-avatar">AM</div>
+        <div class="podium-name">Alex Martinez</div>
+        <div class="podium-stats">
+          <span class="stat"><i class="fas fa-star"></i> 756 pts</span>
+          <span class="stat"><i class="fas fa-book"></i> 15 resources</span>
+          <span class="stat"><i class="fas fa-code-branch"></i> 32 improvements</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Rankings -->
+    <div class="rankings-section">
+      <h2 class="section-title">FULL RANKINGS</h2>
+      
+      <div class="rankings-list">
+        <!-- Rank 4 -->
+        <div class="rank-item">
+          <div class="rank-number">4</div>
+          <div class="rank-avatar">LC</div>
+          <div class="rank-info">
+            <div class="rank-name">Lisa Chen</div>
+            <div class="rank-details">
+              <span><i class="fas fa-star"></i> 643 pts</span>
+              <span>•</span>
+              <span><i class="fas fa-book"></i> 12 created</span>
+              <span>•</span>
+              <span><i class="fas fa-code-branch"></i> 28 improved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rank 5 -->
+        <div class="rank-item">
+          <div class="rank-number">5</div>
+          <div class="rank-avatar">MJ</div>
+          <div class="rank-info">
+            <div class="rank-name">Mike Johnson</div>
+            <div class="rank-details">
+              <span><i class="fas fa-star"></i> 598 pts</span>
+              <span>•</span>
+              <span><i class="fas fa-book"></i> 10 created</span>
+              <span>•</span>
+              <span><i class="fas fa-code-branch"></i> 25 improved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rank 6 - YOU -->
+        <div class="rank-item you">
+          <div class="rank-number">6</div>
+          <div class="rank-avatar">HP</div>
+          <div class="rank-info">
+            <div class="rank-name">
+              Hossem Pixel
+              <span class="you-badge">YOU</span>
+            </div>
+            <div class="rank-details">
+              <span><i class="fas fa-star"></i> 512 pts</span>
+              <span>•</span>
+              <span><i class="fas fa-book"></i> 8 created</span>
+              <span>•</span>
+              <span><i class="fas fa-code-branch"></i> 20 improved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- More ranks -->
+        <div class="rank-item">
+          <div class="rank-number">7</div>
+          <div class="rank-avatar">RP</div>
+          <div class="rank-info">
+            <div class="rank-name">Rachel Park</div>
+            <div class="rank-details">
+              <span><i class="fas fa-star"></i> 487 pts</span>
+              <span>•</span>
+              <span><i class="fas fa-book"></i> 7 created</span>
+              <span>•</span>
+              <span><i class="fas fa-code-branch"></i> 19 improved</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rank-item">
+          <div class="rank-number">8</div>
+          <div class="rank-avatar">DW</div>
+          <div class="rank-info">
+            <div class="rank-name">David Wilson</div>
+            <div class="rank-details">
+              <span><i class="fas fa-star"></i> 421 pts</span>
+              <span>•</span>
+              <span><i class="fas fa-book"></i> 6 created</span>
+              <span>•</span>
+              <span><i class="fas fa-code-branch"></i> 17 improved</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rank-item">
+          <div class="rank-number">9</div>
+          <div class="rank-avatar">EN</div>
+          <div class="rank-info">
+            <div class="rank-name">Emily Nguyen</div>
+            <div class="rank-details">
+              <span><i class="fas fa-star"></i> 389 pts</span>
+              <span>•</span>
+              <span><i class="fas fa-book"></i> 5 created</span>
+              <span>•</span>
+              <span><i class="fas fa-code-branch"></i> 15 improved</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rank-item">
+          <div class="rank-number">10</div>
+          <div class="rank-avatar">TL</div>
+          <div class="rank-info">
+            <div class="rank-name">Tom Lewis</div>
+            <div class="rank-details">
+              <span><i class="fas fa-star"></i> 352 pts</span>
+              <span>•</span>
+              <span><i class="fas fa-book"></i> 5 created</span>
+              <span>•</span>
+              <span><i class="fas fa-code-branch"></i> 13 improved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Community Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">10,245</div>
+        <div class="stat-label">ACTIVE CONTRIBUTORS</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">45,892</div>
+        <div class="stat-label">RESOURCES CREATED</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">128,456</div>
+        <div class="stat-label">VERSION IMPROVEMENTS</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

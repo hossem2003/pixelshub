@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixels - Open-Source Learning Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Learn. Fork. Improve.</h1>
+      <p>Open-source courses built by students, for students.</p>
+      
+      <div class="hero-search">
+        <input type="text" placeholder="What do you want to learn today?">
+      </div>
+      
+      <div class="hero-cta">
+        <a href="browse.html" class="btn btn-primary">Browse Courses</a>
+        <a href="create.html" class="btn btn-accent">Create Resource</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Versions Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-star"></i> Top Versions
+        </h2>
+        <a href="browse.html?sort=top" class="section-link">View All →</a>
+      </div>
+      
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <span class="card-badge">Top Version</span>
+          <h3 class="card-title">Advanced Data Structures & Algorithms</h3>
+          <span class="card-tag">Computer Science</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 342</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 12 versions</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar" title="Contributor 1"></div>
+            <div class="contributor-avatar" title="Contributor 2"></div>
+            <div class="contributor-avatar" title="Contributor 3"></div>
+            <div class="contributor-avatar" title="Contributor 4"></div>
+            <div class="contributor-avatar" title="+5 more">+5</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <span class="card-badge">Top Version</span>
+          <h3 class="card-title">Quantum Mechanics Essentials</h3>
+          <span class="card-tag">Physics</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 298</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 8 versions</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <span class="card-badge">Top Version</span>
+          <h3 class="card-title">Linear Algebra Cheat Sheet</h3>
+          <span class="card-tag">Mathematics</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 276</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 15 versions</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <span class="card-badge">Top Version</span>
+          <h3 class="card-title">UI/UX Design Principles</h3>
+          <span class="card-tag">Design</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 254</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 9 versions</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recently Improved Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-plus-circle"></i> Recently Improved
+        </h2>
+        <a href="browse.html?sort=recent" class="section-link">View All →</a>
+      </div>
+      
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Python for Data Science</h3>
+          <span class="card-tag">Computer Science</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 189</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 6 versions</span>
+            <span class="card-stat"><i class="far fa-clock"></i> 2h ago</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Spanish Grammar Guide</h3>
+          <span class="card-tag">Languages</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 167</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 10 versions</span>
+            <span class="card-stat"><i class="far fa-clock"></i> 5h ago</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Organic Chemistry Reactions</h3>
+          <span class="card-tag">Chemistry</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 143</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 7 versions</span>
+            <span class="card-stat"><i class="far fa-clock"></i> 1d ago</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="window.location.href='course.html'">
+          <h3 class="card-title">Machine Learning Basics</h3>
+          <span class="card-tag">Computer Science</span>
+          <div class="card-stats">
+            <span class="card-stat"><i class="fas fa-star"></i> 221</span>
+            <span class="card-stat"><i class="fas fa-code-branch"></i> 11 versions</span>
+            <span class="card-stat"><i class="far fa-clock"></i> 1d ago</span>
+          </div>
+          <div class="card-contributors">
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+            <div class="contributor-avatar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subjects Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-th"></i> Explore by Subject
+        </h2>
+      </div>
+      
+      <div class="subject-grid">
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=math'">
+          <div class="subject-icon"><i class="fas fa-calculator"></i></div>
+          <div class="subject-name">Mathematics</div>
+        </div>
+        
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=cs'">
+          <div class="subject-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="subject-name">Computer Science</div>
+        </div>
+        
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=physics'">
+          <div class="subject-icon"><i class="fas fa-atom"></i></div>
+          <div class="subject-name">Physics</div>
+        </div>
+        
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=design'">
+          <div class="subject-icon"><i class="fas fa-palette"></i></div>
+          <div class="subject-name">Design</div>
+        </div>
+        
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=languages'">
+          <div class="subject-icon"><i class="fas fa-language"></i></div>
+          <div class="subject-name">Languages</div>
+        </div>
+        
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=chemistry'">
+          <div class="subject-icon"><i class="fas fa-flask"></i></div>
+          <div class="subject-name">Chemistry</div>
+        </div>
+        
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=biology'">
+          <div class="subject-icon"><i class="fas fa-dna"></i></div>
+          <div class="subject-name">Biology</div>
+        </div>
+        
+        <div class="subject-card" onclick="window.location.href='browse.html?subject=engineering'">
+          <div class="subject-icon"><i class="fas fa-cog"></i></div>
+          <div class="subject-name">Engineering</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

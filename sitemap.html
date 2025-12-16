@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Map - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/sitemap.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sitemap Content -->
+  <div class="container">
+    <div class="sitemap-header">
+      <h1 class="page-title"><i class="fas fa-map"></i> SITE MAP</h1>
+      <p class="page-description">Complete navigation guide to all pages</p>
+    </div>
+
+    <!-- Core Pages -->
+    <section class="sitemap-section">
+      <h2 class="section-heading"><i class="fas fa-book"></i> CORE PAGES</h2>
+      <div class="page-grid">
+        <a href="index.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-handshake"></i></div>
+          <h3>HOME</h3>
+          <p>Landing page with featured content and top versions</p>
+        </a>
+
+        <a href="browse.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-search"></i></div>
+          <h3>BROWSE</h3>
+          <p>Search and filter educational resources</p>
+        </a>
+
+        <a href="course.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-book"></i></div>
+          <h3>COURSE VIEWER</h3>
+          <p>Read content with table of contents and version switcher</p>
+        </a>
+
+        <a href="versions.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-comments"></i></div>
+          <h3>VERSION HISTORY</h3>
+          <p>Timeline of all improvements and changes</p>
+        </a>
+
+        <a href="compare.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>COMPARE VERSIONS</h3>
+          <p>Side-by-side version comparison with diffs</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Creation & Contribution -->
+    <section class="sitemap-section">
+      <h2 class="section-heading"><i class="fas fa-edit"></i> CREATE & CONTRIBUTE</h2>
+      <div class="page-grid">
+        <a href="create.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-plus"></i></div>
+          <h3>CREATE RESOURCE</h3>
+          <p>Submit new educational content</p>
+        </a>
+
+        <a href="improve.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-code-branch"></i></div>
+          <h3>IMPROVE VERSION</h3>
+          <p>Fork and enhance existing resources</p>
+        </a>
+
+        <a href="contributions.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>MY CONTRIBUTIONS</h3>
+          <p>Track all your created and improved resources</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section class="sitemap-section">
+      <h2 class="section-heading"><i class="fas fa-users"></i> COMMUNITY</h2>
+      <div class="page-grid">
+        <a href="discussions.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-comments"></i></div>
+          <h3>DISCUSSIONS</h3>
+          <p>Community forum and Q&A</p>
+        </a>
+
+        <a href="leaderboard.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-trophy"></i></div>
+          <h3>LEADERBOARD</h3>
+          <p>Top contributors ranked by points</p>
+        </a>
+
+        <a href="profile.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-user"></i></div>
+          <h3>PROFILE</h3>
+          <p>User profile with badges and achievements</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Account & Settings -->
+    <section class="sitemap-section">
+      <h2 class="section-heading"><i class="fas fa-cog"></i> ACCOUNT & SETTINGS</h2>
+      <div class="page-grid">
+        <a href="login.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-key"></i></div>
+          <h3>LOGIN</h3>
+          <p>Sign in to your account</p>
+        </a>
+
+        <a href="settings.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-cog"></i></div>
+          <h3>SETTINGS</h3>
+          <p>Manage account preferences and notifications</p>
+        </a>
+
+        <a href="notifications.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-bell"></i></div>
+          <h3>NOTIFICATIONS</h3>
+          <p>View all your notifications and mentions</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Information -->
+    <section class="sitemap-section">
+      <h2 class="section-heading"><i class="fas fa-info-circle"></i> INFORMATION</h2>
+      <div class="page-grid">
+        <a href="about.html" class="page-card">
+          <div class="page-icon"><i class="fas fa-palette"></i></div>
+          <h3>ABOUT</h3>
+          <p>Mission, values, and how Pixels works</p>
+        </a>
+
+        <a href="help.html" class="page-card">
+          <div class="page-icon">[?]</div>
+          <h3>HELP CENTER</h3>
+          <p>FAQs and support resources</p>
+        </a>
+
+        <a href="sitemap.html" class="page-card active">
+          <div class="page-icon"><i class="fas fa-medal"></i></div>
+          <h3>SITE MAP</h3>
+          <p>You are here - complete navigation guide</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Platform Stats -->
+    <div class="platform-stats">
+      <h2 class="section-heading"><i class="fas fa-crown"></i> PLATFORM STATS</h2>
+      <div class="stats-boxes">
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fas fa-file"></i></div>
+          <div class="stat-count">18 PAGES</div>
+          <div class="stat-desc">Complete platform</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fas fa-palette"></i></div>
+          <div class="stat-count">16 CSS FILES</div>
+          <div class="stat-desc">Pixel-perfect styling</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+          <div class="stat-count">5 JS FILES</div>
+          <div class="stat-desc">Interactive features</div>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-count">100% PIXELATED</div>
+          <div class="stat-desc">Retro aesthetic</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/workflow.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Workflow Content -->
+  <div class="container">
+    <div class="workflow-header">
+      <h1 class="page-title"><i class="fas fa-gamepad"></i> GETTING STARTED</h1>
+      <p class="page-description">Complete workflow guide from login to contribution</p>
+    </div>
+
+    <div class="workflow-steps">
+      <!-- Step 1 -->
+      <div class="workflow-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-sign-in-alt"></i></div>
+          <h2 class="step-title">LOGIN / SIGNUP</h2>
+          <p class="step-description">
+            Create your account or sign in to start your learning journey. Use your email or connect with GitHub/Google.
+          </p>
+          <a href="login.html" class="btn btn-primary">→ GO TO LOGIN</a>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="workflow-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-search"></i></div>
+          <h2 class="step-title">BROWSE RESOURCES</h2>
+          <p class="step-description">
+            Explore thousands of educational resources. Filter by subject, level, and type to find exactly what you need.
+          </p>
+          <a href="browse.html" class="btn btn-primary">→ GO TO BROWSE</a>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="workflow-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-book"></i></div>
+          <h2 class="step-title">READ & LEARN</h2>
+          <p class="step-description">
+            Open any resource to read with table of contents, version history, and community discussions.
+          </p>
+          <a href="course.html" class="btn btn-primary">→ GO TO COURSE</a>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="workflow-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-plus"></i></div>
+          <h2 class="step-title">CREATE NEW CONTENT</h2>
+          <p class="step-description">
+            Share your knowledge by creating original educational resources on any subject you're passionate about.
+          </p>
+          <a href="create.html" class="btn btn-primary">→ GO TO CREATE</a>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="workflow-step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-edit"></i></div>
+          <h2 class="step-title">IMPROVE EXISTING CONTENT</h2>
+          <p class="step-description">
+            Fork any resource and create an improved version with better explanations, examples, or corrections.
+          </p>
+          <a href="improve.html" class="btn btn-primary">→ GO TO IMPROVE</a>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="workflow-step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-balance-scale"></i></div>
+          <h2 class="step-title">COMPARE VERSIONS</h2>
+          <p class="step-description">
+            View side-by-side comparisons of different versions to see what changed and how content evolved.
+          </p>
+          <a href="compare.html" class="btn btn-primary">→ GO TO COMPARE</a>
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="workflow-step">
+        <div class="step-number">7</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-comments"></i></div>
+          <h2 class="step-title">JOIN DISCUSSIONS</h2>
+          <p class="step-description">
+            Engage with the community through discussions, ask questions, and help others learn.
+          </p>
+          <a href="discussions.html" class="btn btn-primary">→ GO TO DISCUSSIONS</a>
+        </div>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="workflow-step">
+        <div class="step-number">8</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+          <h2 class="step-title">TRACK YOUR PROGRESS</h2>
+          <p class="step-description">
+            View all your contributions in one place - created resources, improvements, and drafts.
+          </p>
+          <a href="contributions.html" class="btn btn-primary">→ GO TO CONTRIBUTIONS</a>
+        </div>
+      </div>
+
+      <!-- Step 9 -->
+      <div class="workflow-step">
+        <div class="step-number">9</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-trophy"></i></div>
+          <h2 class="step-title">CLIMB THE LEADERBOARD</h2>
+          <p class="step-description">
+            Earn points for contributions and climb the leaderboard to showcase your expertise.
+          </p>
+          <a href="leaderboard.html" class="btn btn-primary">→ GO TO LEADERBOARD</a>
+        </div>
+      </div>
+
+      <!-- Step 10 -->
+      <div class="workflow-step">
+        <div class="step-number">10</div>
+        <div class="step-content">
+          <div class="step-icon"><i class="fas fa-user"></i></div>
+          <h2 class="step-title">MANAGE YOUR PROFILE</h2>
+          <p class="step-description">
+            Customize your profile, showcase achievements, and manage account settings.
+          </p>
+          <a href="profile.html" class="btn btn-primary">→ GO TO PROFILE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="quick-links-section">
+      <h2 class="section-title">QUICK LINKS</h2>
+      <div class="quick-links-grid">
+        <a href="about.html" class="quick-link-card">
+          <span class="link-icon"><i class="fas fa-clipboard-list"></i></span>
+          <span class="link-text">ABOUT PIXELS</span>
+        </a>
+        <a href="help.html" class="quick-link-card">
+          <span class="link-icon"><i class="fas fa-question"></i></span>
+          <span class="link-text">HELP CENTER</span>
+        </a>
+        <a href="sitemap.html" class="quick-link-card">
+          <span class="link-icon"><i class="fas fa-map"></i></span>
+          <span class="link-text">SITE MAP</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

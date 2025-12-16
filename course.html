@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Data Structures & Algorithms - Pixels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/course.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">P</div>
+      <span>Pixels</span>
+    </a>
+    
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="create.html">Create</a></li>
+        <li><a href="profile.html">My Contributions</a></li>
+      </ul>
+    </nav>
+    
+    <div class="search-bar">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="Search courses, notes, and more...">
+    </div>
+    
+    <div class="user-menu">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+        <i class="fas fa-moon theme-icon"></i>
+      </button>
+      <div class="user-avatar" title="Profile">HP</div>
+      <div class="user-dropdown">
+        <div class="dropdown-header">
+          <div class="dropdown-user-name">Hossem Pixel</div>
+          <div class="dropdown-user-email">@hossempixel</div>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> Profile</a></li>
+          <li><a href="contributions.html" class="dropdown-item"><i class="fas fa-chart-line"></i> My Contributions</a></li>
+          <li><a href="settings.html" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+          <li><a href="notifications.html" class="dropdown-item"><i class="fas fa-bell"></i> Notifications</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a href="help.html" class="dropdown-item"><i class="fas fa-question-circle"></i> Help</a></li>
+          <li><span class="dropdown-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Course Header -->
+  <div class="course-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <a href="browse.html">Browse</a> / <span>Advanced Data Structures & Algorithms</span>
+      </div>
+      
+      <h1 class="course-title">Advanced Data Structures & Algorithms</h1>
+      
+      <div class="course-meta">
+        <span class="card-tag">Computer Science</span>
+        <span class="level-badge intermediate">Intermediate</span>
+        <span class="community-score"><i class="fas fa-star"></i> 342 Community Score</span>
+      </div>
+      
+      <div class="contributors">
+        <span>Contributors:</span>
+        <div class="contributor-avatars">
+          <div class="contributor-avatar" title="Sarah Chen"></div>
+          <div class="contributor-avatar" title="Alex Kumar"></div>
+          <div class="contributor-avatar" title="Maria Garcia"></div>
+          <div class="contributor-avatar" title="John Smith"></div>
+          <div class="contributor-avatar" title="+5 more">+5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Course Layout (3 Columns) -->
+  <div class="course-layout">
+    <!-- Left Sidebar - Table of Contents -->
+    <aside class="toc-sidebar">
+      <h3>Course Structure</h3>
+      <nav class="toc">
+        <div class="toc-item active">
+          <div class="toc-chapter" onclick="toggleChapter(this)">
+            <span class="toc-icon">▼</span>
+            <span>1. Introduction</span>
+          </div>
+          <div class="toc-sections">
+            <a href="#" class="toc-link active">1.1 Overview</a>
+            <a href="#" class="toc-link">1.2 Prerequisites</a>
+            <a href="#" class="toc-link">1.3 Learning Objectives</a>
+          </div>
+        </div>
+        
+        <div class="toc-item">
+          <div class="toc-chapter" onclick="toggleChapter(this)">
+            <span class="toc-icon">▶</span>
+            <span>2. Array-Based Structures</span>
+          </div>
+          <div class="toc-sections" style="display: none;">
+            <a href="#" class="toc-link">2.1 Dynamic Arrays</a>
+            <a href="#" class="toc-link">2.2 Circular Buffers</a>
+            <a href="#" class="toc-link">2.3 Practice Problems</a>
+          </div>
+        </div>
+        
+        <div class="toc-item">
+          <div class="toc-chapter" onclick="toggleChapter(this)">
+            <span class="toc-icon">▶</span>
+            <span>3. Linked Structures</span>
+          </div>
+          <div class="toc-sections" style="display: none;">
+            <a href="#" class="toc-link">3.1 Singly Linked Lists</a>
+            <a href="#" class="toc-link">3.2 Doubly Linked Lists</a>
+            <a href="#" class="toc-link">3.3 Skip Lists</a>
+          </div>
+        </div>
+        
+        <div class="toc-item">
+          <div class="toc-chapter" onclick="toggleChapter(this)">
+            <span class="toc-icon">▶</span>
+            <span>4. Trees</span>
+          </div>
+          <div class="toc-sections" style="display: none;">
+            <a href="#" class="toc-link">4.1 Binary Trees</a>
+            <a href="#" class="toc-link">4.2 BST Operations</a>
+            <a href="#" class="toc-link">4.3 AVL Trees</a>
+            <a href="#" class="toc-link">4.4 Red-Black Trees</a>
+          </div>
+        </div>
+        
+        <div class="toc-item">
+          <div class="toc-chapter" onclick="toggleChapter(this)">
+            <span class="toc-icon">▶</span>
+            <span>5. Heaps & Priority Queues</span>
+          </div>
+          <div class="toc-sections" style="display: none;">
+            <a href="#" class="toc-link">5.1 Binary Heaps</a>
+            <a href="#" class="toc-link">5.2 Fibonacci Heaps</a>
+            <a href="#" class="toc-link">5.3 Applications</a>
+          </div>
+        </div>
+        
+        <div class="toc-item">
+          <div class="toc-chapter" onclick="toggleChapter(this)">
+            <span class="toc-icon">▶</span>
+            <span>6. Graphs</span>
+          </div>
+          <div class="toc-sections" style="display: none;">
+            <a href="#" class="toc-link">6.1 Representations</a>
+            <a href="#" class="toc-link">6.2 Traversal Algorithms</a>
+            <a href="#" class="toc-link">6.3 Shortest Paths</a>
+            <a href="#" class="toc-link">6.4 MST Algorithms</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Center - Content Viewer -->
+    <main class="content-viewer">
+      <div class="content-header">
+        <span class="version-indicator">Version 4.2</span>
+        <span class="updated-time">Updated 3 days ago</span>
+      </div>
+      
+      <article class="course-content">
+        <h2>1.1 Overview</h2>
+        
+        <p>Welcome to the Advanced Data Structures & Algorithms course! This comprehensive guide will take you through the most important data structures and algorithms used in computer science and software engineering.</p>
+        
+        <p>Data structures are specialized formats for organizing, processing, retrieving, and storing data. Choosing the right data structure for a problem is crucial for writing efficient code.</p>
+        
+        <div class="highlight-box info">
+          <strong><i class="fas fa-lightbulb"></i> What you'll learn:</strong>
+          <ul>
+            <li>Advanced data structures and their implementations</li>
+            <li>Time and space complexity analysis</li>
+            <li>Algorithm design techniques</li>
+            <li>Real-world applications and problem-solving</li>
+          </ul>
+        </div>
+        
+        <h3>Why This Matters</h3>
+        
+        <p>Understanding data structures and algorithms is essential for:</p>
+        
+        <ul>
+          <li><span class="addition">Writing efficient, scalable code</span></li>
+          <li>Solving complex computational problems</li>
+          <li>Performing well in technical interviews</li>
+          <li><span class="addition">Contributing to open-source projects</span></li>
+        </ul>
+        
+        <h3>Course Structure</h3>
+        
+        <p>This course is organized into six main modules:</p>
+        
+        <ol>
+          <li><strong>Array-Based Structures</strong> - Dynamic arrays, circular buffers</li>
+          <li><strong>Linked Structures</strong> - Various types of linked lists</li>
+          <li><strong>Trees</strong> - Binary trees, BSTs, balanced trees</li>
+          <li><strong>Heaps</strong> - Priority queues and heap implementations</li>
+          <li><strong>Graphs</strong> - Representations and algorithms</li>
+          <li><strong>Advanced Topics</strong> - Tries, suffix trees, and more</li>
+        </ol>
+        
+        <div class="code-block">
+          <div class="code-header">
+            <span>Example: Array vs Linked List Performance</span>
+            <span>Python</span>
+          </div>
+          <pre><code>import time
+
+# Array (List) - Fast random access
+array = [i for i in range(1000000)]
+start = time.time()
+element = array[500000]  # O(1)
+print(f"Array access: {time.time() - start}s")
+
+# Linked List - Slow random access  
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+# Building a linked list
+head = Node(0)
+current = head
+for i in range(1, 1000000):
+    current.next = Node(i)
+    current = current.next
+
+# Accessing middle element - O(n)
+start = time.time()
+current = head
+for _ in range(500000):
+    current = current.next
+print(f"Linked list access: {time.time() - start}s")</code></pre>
+        </div>
+        
+        <div class="highlight-box warning">
+          <strong><i class="fas fa-exclamation-triangle"></i> Note:</strong>
+          <p class="correction">As demonstrated above, array access is significantly faster for random access operations, while linked lists excel at insertions and deletions.</p>
+        </div>
+        
+        <h3>Prerequisites</h3>
+        
+        <p>Before starting this course, you should be familiar with:</p>
+        
+        <ul>
+          <li>Basic programming concepts (variables, functions, loops)</li>
+          <li>At least one programming language (Python, Java, C++, etc.)</li>
+          <li>Basic understanding of Big O notation</li>
+        </ul>
+        
+        <div class="nav-buttons">
+          <button class="btn btn-outline" disabled>← Previous</button>
+          <button class="btn btn-primary">Next: Prerequisites →</button>
+        </div>
+      </article>
+      
+      <!-- Floating Improve Button -->
+      <button class="floating-btn" onclick="window.location.href='improve.html'">
+        <i class="fas fa-edit"></i> Improve This Version
+      </button>
+    </main>
+
+    <!-- Right Sidebar - Version Panel -->
+    <aside class="version-panel">
+      <div class="version-info">
+        <h3>Current Version</h3>
+        <div class="version-number monospace">v4.2</div>
+        <div class="version-score"><i class="fas fa-star"></i> 342 Score</div>
+        <div class="version-date">Updated 3 days ago</div>
+      </div>
+      
+      <div class="version-actions">
+        <button class="btn btn-primary" onclick="window.location.href='versions.html'" style="width: 100%;">
+          View All Versions
+        </button>
+        <button class="btn btn-outline" onclick="window.location.href='compare.html'" style="width: 100%;">
+          Compare Versions
+        </button>
+        <button class="btn btn-accent" onclick="window.location.href='discussions.html'" style="width: 100%;">
+          <i class="fas fa-comments"></i> Discuss
+        </button>
+      </div>
+      
+      <div class="version-stats">
+        <h4>Version Stats</h4>
+        <div class="stat-item">
+          <span class="stat-label">Total Versions:</span>
+          <span class="stat-value monospace">12</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Contributors:</span>
+          <span class="stat-value monospace">9</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Last Improved:</span>
+          <span class="stat-value">Sarah Chen</span>
+        </div>
+      </div>
+      
+      <div class="related-resources">
+        <h4>Related Resources</h4>
+        <a href="#" class="related-link">Algorithm Complexity Cheat Sheet</a>
+        <a href="#" class="related-link">Python Implementation Guide</a>
+        <a href="#" class="related-link">Practice Problems Collection</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Pixels</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Mission</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Open Source</h3>
+          <ul class="footer-links">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contribute</a></li>
+            <li><a href="#">Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul class="footer-links">
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Guidelines</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pixels. Open-source learning for everyone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/course.js"></script>
+</body>
+</html>
