@@ -19,6 +19,9 @@
       <span>Pixels</span>
     </a>
     
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
     <nav>
       <ul class="nav">
         <li><a href="index.html">Home</a></li>
@@ -38,7 +41,7 @@
         <i class="fas fa-moon theme-icon"></i>
       </button>
       <div class="notification-icon active">
-        <span>”</span>
+        <span>€</span>
         <span class="notification-badge">5</span>
       </div>
       <div class="user-avatar" title="Profile">HP</div>
@@ -63,7 +66,7 @@
   <div class="container notifications-container">
     <!-- Notifications Header -->
     <div class="notifications-header">
-      <h1>” Notifications</h1>
+      <h1>€ Notifications</h1>
       <div class="notification-controls">
         <button class="btn btn-sm btn-outline" onclick="markAllRead()">Mark All as Read</button>
         <button class="btn btn-sm btn-outline" onclick="openSettings()"><i class="fas fa-cog"></i> Settings</button>
@@ -239,7 +242,7 @@
 
     <!-- Empty State (hidden when notifications exist) -->
     <div class="empty-state" style="display: none;">
-      <div class="empty-icon">”</div>
+      <div class="empty-icon">€</div>
       <h3>No New Notifications</h3>
       <p>You're all caught up! Check back later for updates on your contributions.</p>
     </div>

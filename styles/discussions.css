@@ -319,18 +319,60 @@
     width: 100%;
   }
   
+  .thread-item {
+    padding: var(--spacing-md);
+  }
+  
   .thread-header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-sm);
   }
   
+  .thread-title {
+    font-size: 1.1rem;
+  }
+  
   .thread-footer {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .thread-meta {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
   }
   
   .reply-form {
     flex-direction: column;
+  }
+  
+  .reply-input {
+    min-height: 80px;
+  }
+  
+  .discussion-filters {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .filter-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .thread-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .thread-stats {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .vote-count {
+    font-size: 1rem;
   }
 }

@@ -198,4 +198,43 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  
+  .browse-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .browse-header .btn {
+    width: 100%;
+  }
+  
+  .filter-group {
+    padding: var(--spacing-md);
+  }
+  
+  .subject-tag {
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .filters-sidebar {
+    padding: var(--spacing-md);
+  }
+  
+  .filter-header {
+    font-size: 1rem;
+  }
+  
+  .page-numbers button {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
 }

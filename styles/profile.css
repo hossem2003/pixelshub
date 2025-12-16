@@ -318,6 +318,7 @@
   
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
   }
   
   .badges-grid {
@@ -326,13 +327,44 @@
   
   .contribution-tabs {
     flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .contribution-tab {
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-md);
   }
   
   .contribution-item {
     flex-direction: column;
+    padding: var(--spacing-md);
   }
   
   .contribution-meta {
     flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .profile-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
   }
 }

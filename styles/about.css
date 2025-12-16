@@ -355,26 +355,60 @@
   .hero-tagline {
     font-size: 1rem;
   }
+  
+  .about-hero {
+    padding: var(--spacing-2xl) 0;
+  }
 
   .version-flow {
     flex-direction: column;
+    gap: var(--spacing-md);
   }
 
   .flow-arrow {
     transform: rotate(90deg);
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .feature-card {
+    padding: var(--spacing-md);
   }
 
   .stat-value {
     font-size: 2rem;
   }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
 
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing-sm);
   }
 
   .cta-buttons .btn {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch {
+    font-size: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-value {
+    font-size: 1.75rem;
+  }
+  
+  .feature-card {
+    padding: var(--spacing-sm);
   }
 }

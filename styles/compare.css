@@ -253,14 +253,45 @@
   .version-selector {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
   }
   
   .version-select {
     flex: 1;
+    min-width: 120px;
+  }
+  
+  .compare-btn {
+    width: 100%;
   }
   
   .legend-items {
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+  
+  .panel-header {
+    font-size: 1.1rem;
+    padding: var(--spacing-sm);
+  }
+  
+  .panel-content {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .version-selector {
+    flex-direction: column;
+  }
+  
+  .version-select {
+    width: 100%;
+  }
+  
+  .comparison-bar {
+    padding: var(--spacing-sm);
+    font-size: 0.85rem;
   }
 }

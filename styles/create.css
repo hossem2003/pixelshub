@@ -204,8 +204,17 @@
     padding: var(--spacing-lg);
   }
   
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    width: 100% !important;
+  }
+  
   .form-actions {
     flex-direction: column;
+    gap: var(--spacing-sm);
   }
   
   .form-actions .btn {
@@ -214,5 +223,35 @@
   
   .editor-toolbar {
     flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .toolbar-btn {
+    padding: var(--spacing-xs);
+    min-width: 36px;
+  }
+  
+  .subject-tags {
+    gap: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .create-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .create-form {
+    padding: var(--spacing-md);
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.9rem;
   }
 }

@@ -521,4 +521,39 @@
   .impact-grid {
     grid-template-columns: 1fr;
   }
+  
+  .editor-toolbar {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .toolbar-btn {
+    padding: var(--spacing-xs);
+    font-size: 0.85rem;
+    min-width: auto;
+  }
+  
+  .editor-mode-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .banner-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .banner-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar-group {
+    flex-wrap: wrap;
+  }
+  
+  .toolbar-btn {
+    flex: 1;
+    min-width: 40px;
+  }
 }

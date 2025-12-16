@@ -19,6 +19,9 @@
       <span>Pixels</span>
     </a>
     
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
     <nav>
       <ul class="nav">
         <li><a href="index.html">Home</a></li>
@@ -97,8 +100,8 @@
           </ul>
         </div>
         <div class="version-actions">
-          <button class="btn btn-primary" onclick="window.location.href='course.html'">View</button>
-          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=4.2&v2=4.1'">Compare</button>
+          <button class="btn btn-primary" role="button" tabindex="0" onclick="window.location.href='course.html'">View</button>
+          <button class="btn btn-outline" role="button" tabindex="0" onclick="window.location.href='compare.html?v1=4.2&v2=4.1'">Compare</button>
         </div>
       </div>
 
@@ -122,7 +125,7 @@
         </div>
         <div class="version-actions">
           <button class="btn btn-primary" onclick="alert('View version 4.1')">View</button>
-          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=4.1&v2=4.0'">Compare</button>
+          <button class="btn btn-outline" role="button" tabindex="0" onclick="window.location.href='compare.html?v1=4.1&v2=4.0'">Compare</button>
         </div>
       </div>
 
@@ -146,7 +149,7 @@
         </div>
         <div class="version-actions">
           <button class="btn btn-primary" onclick="alert('View version 4.0')">View</button>
-          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=4.0&v2=3.8'">Compare</button>
+          <button class="btn btn-outline" role="button" tabindex="0" onclick="window.location.href='compare.html?v1=4.0&v2=3.8'">Compare</button>
         </div>
       </div>
 
@@ -169,7 +172,7 @@
         </div>
         <div class="version-actions">
           <button class="btn btn-primary" onclick="alert('View version 3.8')">View</button>
-          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=3.8&v2=3.7'">Compare</button>
+          <button class="btn btn-outline" role="button" tabindex="0" onclick="window.location.href='compare.html?v1=3.8&v2=3.7'">Compare</button>
         </div>
       </div>
 
@@ -192,7 +195,7 @@
         </div>
         <div class="version-actions">
           <button class="btn btn-primary" onclick="alert('View version 3.7')">View</button>
-          <button class="btn btn-outline" onclick="window.location.href='compare.html?v1=3.7&v2=3.6'">Compare</button>
+          <button class="btn btn-outline" role="button" tabindex="0" onclick="window.location.href='compare.html?v1=3.7&v2=3.6'">Compare</button>
         </div>
       </div>
 
@@ -208,7 +211,7 @@
     </div>
 
     <div class="back-link" style="margin-top: 2rem; text-align: center;">
-      <a href="course.html" class="btn btn-outline">← Back to Course</a>
+      <a href="course.html" class="btn btn-outline">† Back to Course</a>
     </div>
   </div>
 

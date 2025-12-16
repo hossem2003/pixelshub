@@ -19,6 +19,9 @@
       <span>Pixels</span>
     </a>
     
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
     <nav>
       <ul class="nav">
         <li><a href="index.html">Home</a></li>
@@ -81,9 +84,9 @@
       <div class="banner-content">
         <div>
           <h2>Improving: Advanced Data Structures & Algorithms</h2>
-          <p>Based on <span class="monospace">v4.2</span> by Sarah Chen • <i class="fas fa-star"></i> 342 score</p>
+          <p>Based on <span class="monospace">v4.2</span> by Sarah Chen €¢ <i class="fas fa-star"></i> 342 score</p>
         </div>
-        <button class="btn btn-outline" onclick="window.location.href='course.html'">
+        <button class="btn btn-outline" role="button" tabindex="0" onclick="window.location.href='course.html'">
           Cancel & Return
         </button>
       </div>
@@ -113,9 +116,9 @@
           </div>
           <div class="toolbar-divider"></div>
           <div class="toolbar-section">
-            <button class="toolbar-btn" title="Bullet List">• List</button>
+            <button class="toolbar-btn" title="Bullet List">€¢ List</button>
             <button class="toolbar-btn" title="Number List">1. List</button>
-            <button class="toolbar-btn" title="Quote">“ Quote</button>
+            <button class="toolbar-btn" title="Quote">€œ Quote</button>
           </div>
           <div class="toolbar-divider"></div>
           <div class="toolbar-section">
@@ -125,8 +128,8 @@
           </div>
           <div class="toolbar-divider"></div>
           <div class="toolbar-section">
-            <button class="toolbar-btn" title="Undo">↶</button>
-            <button class="toolbar-btn" title="Redo">↷</button>
+            <button class="toolbar-btn" title="Undo">†¶</button>
+            <button class="toolbar-btn" title="Redo">†·</button>
           </div>
           <div class="toolbar-spacer"></div>
           <div class="toolbar-section">
@@ -221,7 +224,7 @@ Before starting this course, you should be familiar with:
 
       <div class="step-actions">
         <button class="btn btn-primary btn-lg" onclick="goToStep(2)">
-          Next: Describe Changes →
+          Next: Describe Changes †’
         </button>
       </div>
     </div>
@@ -277,10 +280,10 @@ Before starting this course, you should be familiar with:
 
       <div class="step-actions">
         <button class="btn btn-outline" onclick="goToStep(1)">
-          ← Back to Edit
+          † Back to Edit
         </button>
         <button class="btn btn-primary btn-lg" onclick="goToStep(3)">
-          Next: Review & Submit →
+          Next: Review & Submit †’
         </button>
       </div>
     </div>
@@ -357,7 +360,7 @@ Before starting this course, you should be familiar with:
 
       <div class="step-actions">
         <button class="btn btn-outline" onclick="goToStep(2)">
-          ← Back to Summary
+          † Back to Summary
         </button>
         <button class="btn btn-primary btn-lg" onclick="submitVersion()">
           <i class="fas fa-rocket"></i> Submit Version 4.3

@@ -198,12 +198,17 @@
     gap: var(--spacing-md);
   }
   
+  .page-header .btn {
+    width: 100%;
+  }
+  
   .version-timeline::before {
     left: 20px;
   }
   
   .version-card {
     margin-left: 40px;
+    padding: var(--spacing-md);
   }
   
   .version-card::before {
@@ -212,11 +217,43 @@
     height: 16px;
   }
   
+  .version-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .version-number {
+    font-size: 1.5rem;
+  }
+  
   .version-actions {
     flex-direction: column;
+    gap: var(--spacing-sm);
   }
   
   .version-actions .btn {
     width: 100%;
+  }
+  
+  .version-meta {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .version-card {
+    margin-left: 30px;
+    padding: var(--spacing-sm);
+  }
+  
+  .version-timeline::before {
+    left: 15px;
+  }
+  
+  .version-card::before {
+    left: -24px;
+    width: 12px;
+    height: 12px;
   }
 }

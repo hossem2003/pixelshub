@@ -309,10 +309,12 @@
   .user-header {
     flex-direction: column;
     text-align: center;
+    gap: var(--spacing-md);
   }
 
   .user-info-card {
     flex-direction: column;
+    padding: var(--spacing-md);
   }
 
   .user-name {
@@ -322,6 +324,7 @@
   .quick-stats {
     width: 100%;
     justify-content: space-around;
+    gap: var(--spacing-sm);
   }
 
   .stat-item {
@@ -336,9 +339,44 @@
   .filter-tabs {
     overflow-x: auto;
     flex-wrap: nowrap;
+    gap: var(--spacing-xs);
+  }
+  
+  .filter-tab {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-md);
   }
 
   .contributions-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .contribution-card {
+    padding: var(--spacing-md);
+  }
+  
+  .contribution-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .user-name {
+    font-size: 1.5rem;
+  }
+  
+  .quick-stats {
+    flex-direction: column;
+  }
+  
+  .stat-item {
+    width: 100%;
+  }
+  
+  .contribution-card {
+    padding: var(--spacing-sm);
   }
 }

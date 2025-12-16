@@ -364,6 +364,11 @@
   .notifications-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+  
+  .notifications-header h1 {
+    font-size: 1.75rem;
   }
   
   .notification-controls {
@@ -372,27 +377,54 @@
   
   .notification-controls button {
     flex: 1;
+    font-size: 0.85rem;
   }
   
   .notification-tabs {
     gap: var(--spacing-xs);
+    overflow-x: auto;
   }
   
   .notification-tabs .tab {
     padding: var(--spacing-sm) var(--spacing-md);
     font-size: 0.85rem;
+    white-space: nowrap;
   }
   
   .notification-item {
     flex-direction: column;
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
   }
   
   .notification-icon-bubble {
     align-self: flex-start;
   }
   
+  .notification-content {
+    width: 100%;
+  }
+  
   .weekly-stats {
     flex-direction: column;
     gap: var(--spacing-md);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .notifications-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .notification-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .notification-title {
+    font-size: 0.95rem;
   }
 }
